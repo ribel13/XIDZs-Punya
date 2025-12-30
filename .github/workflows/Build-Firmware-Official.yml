@@ -39,7 +39,6 @@ on:
         type: choice
         options:
           - openclash
-          - nikki
           - openclash-nikki
           - openclash-insomclash
           - openclash-nikki-passwall
