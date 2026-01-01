@@ -10,7 +10,6 @@ on:
         type: choice
         options:
           - openwrt:24.10.5
-          - openwrt:24.10.4
           - openwrt:23.05.6
           - immortalwrt:24.10.5
           - immortalwrt:24.10.4
@@ -28,9 +27,11 @@ on:
           - Orangepi Pc 2
           - Orangepi R1 Plus
           - Orangepi R1 Plus LTS
+          - Raspberry Pi B
           - Raspberry Pi 2B
           - Raspberry Pi 3B
           - Raspberry Pi 4B
+          - Raspberry Pi 5
           - X86-64
       tunnel:
         description: "Select Tunnel VPN"
@@ -93,9 +94,11 @@ jobs:
               "Orangepi Pc 2",
               "Orangepi R1 Plus",
               "Orangepi R1 Plus LTS",
+              "Raspberry Pi B",
               "Raspberry Pi 2B",
               "Raspberry Pi 3B",
               "Raspberry Pi 4B",
+              "Raspberry Pi 5",
               "X86-64"
             ]
           }
@@ -340,7 +343,7 @@ jobs:
               echo "ARCH_2=aarch64" >> $GITHUB_ENV
               echo "ARCH_3=aarch64_cortex-a53" >> $GITHUB_ENV
               ;;
-            "Raspberry Pi 1B")
+            "Raspberry Pi B")
               echo "PROFILE=rpi" >> $GITHUB_ENV
               echo "TARGET_SYSTEM=bcm27xx/bcm2708" >> $GITHUB_ENV
               echo "TARGET_NAME=bcm27xx-bcm2708" >> $GITHUB_ENV
