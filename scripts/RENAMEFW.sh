@@ -21,10 +21,10 @@ rename_firmware() {
         # Format: "search|replace"
 
         # bcm27xx
-        "-bcm27xx-bcm2708-rpi-1-ext4-factory|RaspberryPi_1B-Ext4_Factory"
-        "-bcm27xx-bcm2708-rpi-1-ext4-sysupgrade|RaspberryPi_1B-Ext4_Sysupgrade"
-        "-bcm27xx-bcm2708-rpi-1-squashfs-factory|RaspberryPi_1B-Squashfs_Factory"
-        "-bcm27xx-bcm2708-rpi-1-squashfs-sysupgrade|RaspberryPi_1B-Squashfs_Sysupgrade"
+        "-bcm27xx-bcm2708-rpi-ext4-factory|RaspberryPi_1B-Ext4_Factory"
+        "-bcm27xx-bcm2708-rpi-ext4-sysupgrade|RaspberryPi_1B-Ext4_Sysupgrade"
+        "-bcm27xx-bcm2708-rpi-squashfs-factory|RaspberryPi_1B-Squashfs_Factory"
+        "-bcm27xx-bcm2708-rpi-squashfs-sysupgrade|RaspberryPi_1B-Squashfs_Sysupgrade"
         
         "-bcm27xx-bcm2709-rpi-2-ext4-factory|RaspberryPi_2B-Ext4_Factory"
         "-bcm27xx-bcm2709-rpi-2-ext4-sysupgrade|RaspberryPi_2B-Ext4_Sysupgrade"
@@ -156,6 +156,7 @@ rename_firmware() {
         "_allwinner_orangepi-zplus2_|OrangePi_ZeroPlus2"
         "_allwinner_orangepi-zero2_|OrangePi_Zero2"
         "_allwinner_orangepi-zero3_|OrangePi_Zero3"
+        "_allwinner_tanix-tx6_|Tanix-TX6"
         
         # Rockchip Ophub
         "_rk3318-box_|rk3318-Box"
@@ -164,6 +165,7 @@ rename_firmware() {
         "_panther-x2_|rk3566-Panther-X2"
         "_rock5b_|rk3588-Rock5B"
         "_king3399_|rk3399-King3399"
+        
         
         # friendlyarm Ophub
         "_nanopi-r5s_|Nanopi-r5s"
