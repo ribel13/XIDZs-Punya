@@ -131,7 +131,7 @@ set wireless.@wifi-device[0].country='ID'
 commit wireless
 EOF
 
-if grep -q "Raspberry Pi 4\|Raspberry Pi 3" /proc/cpuinfo &>/dev/null; then
+if grep -q "Raspberry Pi 5\|Raspberry Pi 4\|Raspberry Pi 3" /proc/cpuinfo &>/dev/null; then
     echo "Raspberry Pi detected - configuring 5GHz WiFi"
     uci set wireless.@wifi-iface[0].ssid='XIDZs_5G'
     uci set wireless.@wifi-device[0].channel='149'
@@ -149,7 +149,7 @@ uci commit wireless &>/dev/null
 
 # WiFi startup for RPi
 if iw dev &>/dev/null | grep -q Interface; then
-    if grep -q "Raspberry Pi 4\|Raspberry Pi 3" /proc/cpuinfo &>/dev/null; then
+    if grep -q "Raspberry Pi 5\|Raspberry Pi 4\|Raspberry Pi 3" /proc/cpuinfo &>/dev/null; then
         echo "Adding WiFi startup scripts for RPi"
         if ! grep -q "wifi up" /etc/rc.local &>/dev/null; then
             sed -i '/exit 0/i # WiFi startup for RPi' "$RC_LOCAL"
