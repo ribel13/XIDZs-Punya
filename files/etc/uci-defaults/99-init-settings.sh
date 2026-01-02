@@ -33,7 +33,8 @@ ARGON_CONF="/usr/share/ucode/luci/template/themes/argon/header.ut"
 RTA_CONF="/usr/lib/lua/luci/view/themes/rtawrt/header.htm"
 INSTALL2_SH="/root/install2.sh"
 TTY_SH="/root/tty.sh"
-QUENXX_SH="/root/quenxx.sh"
+#QUENXX_SH="/root/quenxx.sh"
+QUENXX_SH="/root/frdm.sh"
 FREE_SH="/sbin/free.sh"
 JAM="/sbin/jam"
 PING_SH="/sbin/ping.sh"
@@ -126,7 +127,7 @@ set wireless.@wifi-device[0].disabled='0'
 set wireless.@wifi-iface[0].disabled='0'
 set wireless.@wifi-iface[0].mode='ap'
 set wireless.@wifi-iface[0].encryption='psk2'
-set wireless.@wifi-iface[0].key='XIDZs2025'
+set wireless.@wifi-iface[0].key='freedom'
 set wireless.@wifi-device[0].country='ID'
 commit wireless
 EOF
@@ -138,7 +139,8 @@ if grep -q "Raspberry Pi 5\|Raspberry Pi 4\|Raspberry Pi 3" /proc/cpuinfo &>/dev
     uci set wireless.@wifi-device[0].htmode='VHT80'
 else
     echo "Generic device - configuring 2.4GHz WiFi"
-    uci set wireless.@wifi-iface[0].ssid='XIDZs' &>/dev/null
+    uci set wireless.@wifi-iface[0].ssid='Freedom' &>/dev/null
+    #uci set wireless.@wifi-iface[0].ssid='XIDZs' &>/dev/null
     uci set wireless.@wifi-device[0].channel='1' &>/dev/null
     uci set wireless.@wifi-device[0].htmode='HT20' &>/dev/null
 fi
