@@ -49,12 +49,12 @@ packages_custom+=(
     "luci-app-ramfree_|${REPOS[IMMORTALWRT]}/luci"
     "luci-app-modemband_|${REPOS[IMMORTALWRT]}/luci"
     "luci-app-sms-tool-js_|${REPOS[IMMORTALWRT]}/luci"
-    #"dns2tcp_|${REPOS[IMMORTALWRT]}/packages"
-    "luci-theme-argon_|${REPOS[IMMORTALWRT]}/luci"
+    "dns2tcp_|${REPOS[IMMORTALWRT]}/packages"
+    #"luci-theme-argon_|${REPOS[IMMORTALWRT]}/luci"
     #"luci-app-irqbalance_|${REPOS[IMMORTALWRT]}/luci"
     
-    #"ookla-speedtest_|${REPOS[KIDDIN9]}"
-    #"luci-app-eqosplus_|${REPOS[KIDDIN9]}"
+    "ookla-speedtest_|${REPOS[KIDDIN9]}"
+    "luci-app-eqosplus_|${REPOS[KIDDIN9]}"
     "luci-app-internet-detector_|${REPOS[KIDDIN9]}"
     "internet-detector_|${REPOS[KIDDIN9]}"
     "internet-detector-mod-modem-restart_|${REPOS[KIDDIN9]}"
@@ -62,13 +62,13 @@ packages_custom+=(
     #"luci-theme-edge_|${REPOS[KIDDIN9]}"
     
     "luci-app-tinyfm_|https://api.github.com/repos/bobbyunknown/luci-app-tinyfm/releases/latest"
-    #"luci-app-droidnet_|https://api.github.com/repos/animegasan/luci-app-droidmodem/releases/latest"
+    "luci-app-droidnet_|https://api.github.com/repos/animegasan/luci-app-droidmodem/releases/latest"
     "luci-theme-alpha_|https://api.github.com/repos/de-quenx/luci-theme-alpha/releases/latest"
     "luci-app-tailscale_|https://api.github.com/repos/asvow/luci-app-tailscale/releases/latest"
-    #"luci-app-ipinfo_|https://api.github.com/repos/bobbyunknown/luci-app-ipinfo/releases/latest"
+    "luci-app-ipinfo_|https://api.github.com/repos/bobbyunknown/luci-app-ipinfo/releases/latest"
     "luci-app-netmonitor_|https://api.github.com/repos/de-quenx/luci-app-netmonitor/releases/latest"
     "luci-theme-argon_|https://api.github.com/repos/de-quenx/luci-theme-argon/releases/latest"
-    #"luci-theme-rtawrt_|https://api.github.com/repos/de-quenx/luci-theme-rtawrt/releases/latest"
+    "luci-theme-rtawrt_|https://api.github.com/repos/de-quenx/luci-theme-rtawrt/releases/latest"
 )
 
 if [[ "${TYPE}" == "OPHUB" || "${TYPE}" == "ULO" ]]; then
