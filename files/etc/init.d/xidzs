@@ -3,33 +3,42 @@
 START=99
 STOP=10
 
-SCREEN_NAME="xidz"
-BOT_SCRIPT="/usr/bin/xidz"
+SCREEN_NAME="freedom"
+BOT_SCRIPT="/usr/bin/freedom"
+#SCREEN_NAME="xidz"
+#BOT_SCRIPT="/usr/bin/xidz"
 
 start() {
     if screen -list | grep -q "$SCREEN_NAME"; then
-        echo "XIDZs Bot is already running"
+        echo "Freedom Bot is already running"
+        #echo "XIDZs Bot is already running"
         return 0
     fi
     
-    echo "Starting XIDZs Bot in screen session..."
+    echo "Starting Freedom Bot in screen session..."
+    # echo "Starting XIDZs Bot in screen session..."
     screen -dmS "$SCREEN_NAME" "$BOT_SCRIPT"
     
     sleep 2
     
     if screen -list | grep -q "$SCREEN_NAME"; then
-        echo "XIDZs Bot started successfully"
+        echo "Freedom Bot started successfully"
+        #echo "XIDZs Bot started successfully"
     else
-        echo "Failed to start XIDZs Bot"
+        echo "Failed to start Freedom Bot"
+        #echo "Failed to start XIDZs Bot"
         return 1
     fi
 }
 
 stop() {
-    echo "Stopping XIDZs Bot..."
+    echo "Stopping Freedom Bot..."
+    #echo "Stopping XIDZs Bot..."
     screen -S "$SCREEN_NAME" -X quit 2>/dev/null
-    killall -9 xidz 2>/dev/null
-    echo "XIDZs Bot stopped"
+    #killall -9 xidz 2>/dev/null
+    killall -9 freedom 2>/dev/null
+    echo "Freedom Bot stopped"
+    #echo "XIDZs Bot stopped"
 }
 
 restart() {
@@ -40,15 +49,19 @@ restart() {
 
 status() {
     if screen -list | grep -q "$SCREEN_NAME"; then
-        echo "XIDZs Bot is running in screen"
+        echo "Freedom Bot is running in screen"
+        #echo "XIDZs Bot is running in screen"
         echo ""
         echo "Screen session: $SCREEN_NAME"
         echo "To monitor: screen -r $SCREEN_NAME"
         echo ""
-        if [ -x "/usr/bin/xidz" ]; then
-            /usr/bin/xidz status
+        if [ -x "/usr/bin/freedom" ]; then
+            /usr/bin/freedom status
+        #if [ -x "/usr/bin/xidz" ]; then
+            #/usr/bin/xidz status
         fi
     else
-        echo "XIDZs Bot is not running"
+        echo "Freedom Bot is not running"
+        #echo "XIDZs Bot is not running"
     fi
 }
