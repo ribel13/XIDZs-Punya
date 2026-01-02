@@ -78,7 +78,7 @@ add_tunnel_packages() {
             PACKAGES+=" $OPENCLASH $NIKKI $PASSWALL"
             ;;
         *)
-            No tunnel
+            # No tunnel
             ;;
     esac
 }
