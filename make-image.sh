@@ -34,15 +34,18 @@ uqmi libqmi qmi-utils umbim libmbim mbim-utils luci-proto-qmi luci-proto-ncm \
 modemmanager luci-proto-modemmanager usb-modeswitch xmm-modem luci-proto-xmm"
 
 # MODEM TOOLS
-PACKAGES+=" atinout modeminfo modemband sms-tool luci-app-modeminfo luci-app-modemband luci-app-sms-tool-js picocom minicom"
-PACKAGES+=" modeminfo-serial-dell modeminfo-serial-fibocom modeminfo-serial-sierra modeminfo-serial-tw modeminfo-serial-xmm"
+#PACKAGES+=" atinout modeminfo modemband sms-tool luci-app-modeminfo luci-app-modemband luci-app-sms-tool-js picocom minicom"
+#PACKAGES+=" modeminfo-serial-dell modeminfo-serial-fibocom modeminfo-serial-sierra modeminfo-serial-tw modeminfo-serial-xmm"
+PACKAGES+=" atinout sms-tool picocom minicom"
+#PACKAGES+=" modeminfo-serial-dell modeminfo-serial-fibocom modeminfo-serial-sierra modeminfo-serial-tw modeminfo-serial-xmm"
+
 
 # VPN TUNNEL
 OPENCLASH="coreutils-nohup ipset ip-full libcap libcap-bin ruby ruby-yaml kmod-tun kmod-inet-diag kmod-nft-tproxy"
 NIKKI="nikki luci-app-nikki"
 INSOMCLASH="insomclash luci-app-insomclash"
 NEKO="php8 php8-cgi kmod-tun bash curl jq ip-full ca-bundle"
-PASSWALL="microsocks dns2socks dns2tcp ipt2socks tcping chinadns-ng xray-core xray-plugin naiveproxy trojan-plus tuic-client luci-app-passwall"
+#PASSWALL="microsocks dns2socks dns2tcp ipt2socks tcping chinadns-ng xray-core xray-plugin naiveproxy trojan-plus tuic-client luci-app-passwall"
 
 add_tunnel_packages() {
     local option="$1"
@@ -59,9 +62,9 @@ add_tunnel_packages() {
         insomclash)
             PACKAGES+=" $INSOMCLASH"
             ;;
-        passwall)
-            PACKAGES+=" $PASSWALL"
-            ;;
+        #passwall)
+            #PACKAGES+=" $PASSWALL"
+            #;;
         nikki-passwall)
             PACKAGES+=" $NIKKI $PASSWALL"
             ;;
@@ -84,12 +87,15 @@ add_tunnel_packages() {
 }
 
 # UTILITIES
+#PACKAGES+=" luci-app-diskman luci-app-mmconfig internet-detector internet-detector-mod-modem-restart luci-app-internet-detector"
+#PACKAGES+=" luci-app-3ginfo-lite luci-app-netmonitor luci-app-eqosplus ookla-speedtest"
 PACKAGES+=" luci-app-diskman luci-app-mmconfig internet-detector internet-detector-mod-modem-restart luci-app-internet-detector"
-PACKAGES+=" luci-app-3ginfo-lite luci-app-netmonitor luci-app-eqosplus ookla-speedtest"
+PACKAGES+=" luci-app-3ginfo-lite luci-app-netmonitor"
 
 # THEMES & REMOTE ACCESS
-PACKAGES+=" luci-theme-argon luci-theme-rtawrt luci-theme-alpha"
+#PACKAGES+=" luci-theme-argon luci-theme-rtawrt luci-theme-alpha"
 PACKAGES+=" tailscale luci-app-tailscale"
+PACKAGES+=" luci-theme-argon luci-theme-alpha"
 
 # PHP8
 PACKAGES+=" php8 php8-cli php8-fastcgi php8-fpm php8-mod-session php8-mod-ctype php8-mod-fileinfo php8-mod-zip php8-mod-iconv php8-mod-mbstring"
