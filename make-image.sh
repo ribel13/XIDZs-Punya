@@ -34,16 +34,15 @@ uqmi libqmi qmi-utils umbim libmbim mbim-utils luci-proto-qmi luci-proto-ncm \
 modemmanager luci-proto-modemmanager usb-modeswitch xmm-modem luci-proto-xmm"
 
 # MODEM TOOLS
-# PACKAGES+=" atinout modeminfo modemband sms-tool luci-app-modeminfo luci-app-modemband luci-app-sms-tool-js picocom minicom"
-# PACKAGES+=" modeminfo-serial-dell modeminfo-serial-fibocom modeminfo-serial-sierra modeminfo-serial-tw modeminfo-serial-xmm"
-PACKAGES+=" sms-tool"
+PACKAGES+=" atinout modeminfo modemband sms-tool luci-app-modeminfo luci-app-modemband luci-app-sms-tool-js picocom minicom"
+PACKAGES+=" modeminfo-serial-dell modeminfo-serial-fibocom modeminfo-serial-sierra modeminfo-serial-tw modeminfo-serial-xmm"
 
 # VPN TUNNEL
 OPENCLASH="coreutils-nohup ipset ip-full libcap libcap-bin ruby ruby-yaml kmod-tun kmod-inet-diag kmod-nft-tproxy"
-# NIKKI="nikki luci-app-nikki"
-# INSOMCLASH="insomclash luci-app-insomclash"
+NIKKI="nikki luci-app-nikki"
+INSOMCLASH="insomclash luci-app-insomclash"
 NEKO="php8 php8-cgi kmod-tun bash curl jq ip-full ca-bundle"
-# PASSWALL="microsocks dns2socks dns2tcp ipt2socks tcping chinadns-ng xray-core xray-plugin naiveproxy trojan-plus tuic-client luci-app-passwall"
+PASSWALL="microsocks dns2socks dns2tcp ipt2socks tcping chinadns-ng xray-core xray-plugin naiveproxy trojan-plus tuic-client luci-app-passwall"
 
 add_tunnel_packages() {
     local option="$1"
@@ -51,35 +50,35 @@ add_tunnel_packages() {
         openclash)
             PACKAGES+=" $OPENCLASH"
             ;;
-        #nikki)
-            #PACKAGES+=" $NIKKI"
+        nikki)
+            PACKAGES+=" $NIKKI"
             ;;
         neko)
             PACKAGES+=" $NEKO"
             ;;
-        #insomclash)
-            #PACKAGES+=" $INSOMCLASH"
+        insomclash)
+            PACKAGES+=" $INSOMCLASH"
             ;;
-        #passwall)
-            #PACKAGES+=" $PASSWALL"
+        passwall)
+            PACKAGES+=" $PASSWALL"
             ;;
-        #nikki-passwall)
-            #PACKAGES+=" $NIKKI $PASSWALL"
+        nikki-passwall)
+            PACKAGES+=" $NIKKI $PASSWALL"
             ;;
-        #nikki-insomclash)
-            #PACKAGES+=" $NIKKI $INSOMCLASH"
+        nikki-insomclash)
+            PACKAGES+=" $NIKKI $INSOMCLASH"
             ;;
-        #openclash-nikki)
-            #PACKAGES+=" $OPENCLASH $NIKKI"
+        openclash-nikki)
+            PACKAGES+=" $OPENCLASH $NIKKI"
             ;;
-        #openclash-insomclash)
-            #PACKAGES+=" $OPENCLASH $INSOMCLASH"
+        openclash-insomclash)
+            PACKAGES+=" $OPENCLASH $INSOMCLASH"
             ;;
-        #openclash-nikki-passwall)
-            #PACKAGES+=" $OPENCLASH $NIKKI $PASSWALL"
+        openclash-nikki-passwall)
+            PACKAGES+=" $OPENCLASH $NIKKI $PASSWALL"
             ;;
         *)
-            # No tunnel
+            No tunnel
             ;;
     esac
 }
