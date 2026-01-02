@@ -29,7 +29,7 @@ packages_custom+=(
     
     "atinout_|${REPOS[KIDDIN9]}"
     "luci-app-diskman_|${REPOS[KIDDIN9]}"
-    #"luci-app-poweroff_|${REPOS[DLLKIDS]}"
+    "luci-app-poweroff_|${REPOS[DLLKIDS]}"
     "luci-app-poweroffdevice_|${REPOS[KIDDIN9]}" 
     #"xmm-modem_|${REPOS[KIDDIN9]}"
     
@@ -39,10 +39,10 @@ packages_custom+=(
     #"ookla-speedtest_|${REPOS[KIDDIN9]}"
     #"luci-app-fancontrol_|${REPOS[KIDDIN9]}"
     "luci-app-atcommands_|${REPOS[KIDDIN9]}"
-    #"tailscale_|${REPOS[KIDDIN9]}"
+    "tailscale_|${REPOS[KIDDIN9]}"
     "tailscale_|${REPOS[OPENWRT]}/packages"
-    #"tailscale_|${REPOS[IMMORTALWRT]}/packages"
-    #"luci-app-tailscale-community_|${REPOS[KIDDIN9]}"
+    "tailscale_|${REPOS[IMMORTALWRT]}/packages"
+    "luci-app-tailscale-community_|${REPOS[KIDDIN9]}"
     
     "luci-app-oled_|${REPOS[KIDDIN9]}"
     #"modemband_|${REPOS[IMMORTALWRT]}/packages"
