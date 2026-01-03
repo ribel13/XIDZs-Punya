@@ -9,17 +9,15 @@ on:
         default: "openwrt:24.10.5"
         type: choice
         options:
-          - openwrt:25.12.0-rc1
           - openwrt:24.10.5
           - openwrt:24.10.4
           - openwrt:23.05.6
-          - immortalwrt:24.10.5
           - immortalwrt:24.10.4
           - immortalwrt:23.05.7
       target:
         description: "Select device board"
         required: false
-        default: "all-device"
+        default: "Amlogic s905x B860H"
         type: choice
         options:
           - all-device
@@ -54,14 +52,15 @@ on:
       tunnel:
         description: "Select Tunnel VPN"
         required: true
-        default: "openclash"
+        default: "nikki"
         type: choice
         options:
           - openclash
           - nikki
-          - openclash-nikki
-          - openclash-insomclash
-          - openclash-nikki-passwall
+          - insomclash
+          # openclash-nikki
+          # openclash-insomclash
+          # openclash-nikki-passwall
           - no-tunnel
       clean:
         description: "Do 'make clean' for each run"
