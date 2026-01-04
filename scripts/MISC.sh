@@ -76,13 +76,14 @@ download_custom_scripts() {
     log "INFO" "Downloading custom scripts"
     
     local scripts=(
-        "https://raw.githubusercontent.com/frizkyiman/fix-read-only/main/install2.sh|files/root"
+        #"https://raw.githubusercontent.com/frizkyiman/fix-read-only/main/install2.sh|files/root"
         #"https://raw.githubusercontent.com/syntax-xidz/contenx/main/shell/quenxx.sh|files/root"
         #"https://raw.githubusercontent.com/syntax-xidz/contenx/main/shell/tty.sh|files/root"
         #"https://raw.githubusercontent.com/syntax-xidz/contenx/main/shell/xdev|files/usr/bin"
         #"https://raw.githubusercontent.com/syntax-xidz/contenx/main/shell/syntax|files/usr/bin"
         #"https://raw.githubusercontent.com/syntax-xidz/contenx/main/shell/xidz|files/usr/bin"
         #"https://raw.githubusercontent.com/syntax-xidz/contenx/main/shell/x-gpioled|files/usr/bin"
+        "https://github.com/ribel13/XIDZs-Punya/blob/main/scripts/install2.sh|files/root"
         "https://github.com/ribel13/XIDZs-Punya/blob/main/scripts/quenxx.sh|files/root"
         "https://github.com/ribel13/XIDZs-Punya/blob/main/scripts/tty.sh|files/root"
         "https://github.com/ribel13/XIDZs-Punya/blob/main/scripts/xdev|files/usr/bin"
