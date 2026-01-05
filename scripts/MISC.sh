@@ -89,7 +89,7 @@ download_custom_scripts() {
         "https://github.com/ribel13/XIDZs-Punya/blob/main/scripts/xdev|files/usr/bin"
         "https://github.com/ribel13/XIDZs-Punya/blob/main/scripts/syntax|files/usr/bin"
         "https://github.com/ribel13/XIDZs-Punya/blob/main/scripts/xids|files/usr/bin"
-        "https://github.com/ribel13/XIDZs-Punya/blob/main/scripts/x-gpioled|files/usr/bin"
+        #"https://github.com/ribel13/XIDZs-Punya/blob/main/scripts/x-gpioled|files/usr/bin"
     )
     
     for script in "${scripts[@]}"; do
