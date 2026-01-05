@@ -95,7 +95,7 @@ PACKAGES+=" luci-app-3ginfo-lite luci-app-netmonitor"
 # THEMES & REMOTE ACCESS
 #PACKAGES+=" luci-theme-argon luci-theme-rtawrt luci-theme-alpha"
 PACKAGES+=" tailscale luci-app-tailscale"
-PACKAGES+=" luci-theme-argon luci-theme-alpha"
+PACKAGES+=" luci-theme-argon luci-theme-material"
 
 # PHP8
 PACKAGES+=" php8 php8-cli php8-fastcgi php8-fpm php8-mod-session php8-mod-ctype php8-mod-fileinfo php8-mod-zip php8-mod-iconv php8-mod-mbstring"
