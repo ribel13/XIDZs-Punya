@@ -573,6 +573,7 @@ jobs:
           # Setup working directory
           mv *-imagebuilder-* ${WORKING_DIR}
           cp -r $GITHUB_WORKSPACE/origin/* $GITHUB_WORKSPACE/${WORKING_DIR}
+
           echo "status=success" >> $GITHUB_OUTPUT
 
       - name: Download External Packages
@@ -625,7 +626,6 @@ jobs:
           # Move and rename output files
           for file in bin/targets/"${TARGET_SYSTEM}"/*-rootfs.tar.gz; do
             if [ -f "$file" ]; then
-              #new_name="XIDZs-$(basename "$file" -rootfs.tar.gz)_${{ env.TUNNEL }}-rootfs.tar.gz"
               new_name="Freedom-$(basename "$file" -rootfs.tar.gz)_${{ env.TUNNEL }}-rootfs.tar.gz"
               mv "$file" compiled_images/$new_name
             fi
