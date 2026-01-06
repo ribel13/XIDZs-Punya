@@ -17,8 +17,9 @@ EXCLUDED=""
 
 # CORE SYSTEM
 PACKAGES+=" libc bash block-mount coreutils-base64 coreutils-sleep coreutils-stat \
-curl wget-ssl tar unzip uhttpd uhttpd-mod-ubus \
-luci luci-ssl dnsmasq-full dbus libdbus glib2"
+curl wget-ssl tar unzip uhttpd uhttpd-mod-ubus kmod-tun bash ip-full ca-bundle \
+luci luci-ssl dnsmasq-full dbus libdbus glib2 jq ruby ruby-yaml \
+kmod-inet-diag kmod-nft-tproxy ipset libcap libcap-bin coreutils-nohup"
 
 # STORAGE & FILESYSTEM
 PACKAGES+=" kmod-usb-storage kmod-scsi-core dosfstools fdisk parted losetup resize2fs e2fsprogs"
@@ -89,7 +90,7 @@ add_tunnel_packages() {
 # UTILITIES
 #PACKAGES+=" luci-app-diskman luci-app-mmconfig internet-detector internet-detector-mod-modem-restart luci-app-internet-detector"
 #PACKAGES+=" luci-app-3ginfo-lite luci-app-netmonitor luci-app-eqosplus ookla-speedtest"
-PACKAGES+=" luci-app-diskman luci-app-mmconfig internet-detector internet-detector-mod-modem-restart luci-app-internet-detector"
+PACKAGES+=" luci-app-diskman internet-detector internet-detector-mod-modem-restart luci-app-internet-detector"
 
 # THEMES & REMOTE ACCESS
 #PACKAGES+=" luci-theme-argon luci-theme-rtawrt luci-theme-alpha"
