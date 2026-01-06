@@ -30,15 +30,15 @@ packages_custom+=(
     "atinout_|${REPOS[KIDDIN9]}"
     "luci-app-diskman_|${REPOS[KIDDIN9]}"
     #"luci-app-poweroff_|${REPOS[DLLKIDS]}"
-    "luci-app-poweroffdevice_|${REPOS[KIDDIN9]}" 
-    #"xmm-modem_|${REPOS[KIDDIN9]}"
+    ##"luci-app-poweroffdevice_|${REPOS[KIDDIN9]}" 
+    "xmm-modem_|${REPOS[KIDDIN9]}"
     
     ##"luci-app-lite-watchdog_|${REPOS[KIDDIN9]}"
     #"luci-app-speedtest-web_|${REPOS[KIDDIN9]}"
     #"luci-app-netspeedtest_|${REPOS[KIDDIN9]}"
     #"ookla-speedtest_|${REPOS[KIDDIN9]}"
     #"luci-app-fancontrol_|${REPOS[KIDDIN9]}"
-    "luci-app-atcommands_|${REPOS[KIDDIN9]}"
+    ##"luci-app-atcommands_|${REPOS[KIDDIN9]}"
     #"tailscale_|${REPOS[KIDDIN9]}"
     "tailscale_|${REPOS[OPENWRT]}/packages"
     #"tailscale_|${REPOS[IMMORTALWRT]}/packages"
@@ -67,7 +67,7 @@ packages_custom+=(
     "luci-app-tailscale_|https://api.github.com/repos/asvow/luci-app-tailscale/releases/latest"
     ##"luci-app-ipinfo_|https://api.github.com/repos/bobbyunknown/luci-app-ipinfo/releases/latest"
     ##"luci-app-netmonitor_|https://api.github.com/repos/de-quenx/luci-app-netmonitor/releases/latest"
-    "luci-theme-argon_|https://api.github.com/repos/de-quenx/luci-theme-argon/releases/latest"
+    ##"luci-theme-argon_|https://api.github.com/repos/de-quenx/luci-theme-argon/releases/latest"
     #"luci-theme-rtawrt_|https://api.github.com/repos/de-quenx/luci-theme-rtawrt/releases/latest"
 )
 
