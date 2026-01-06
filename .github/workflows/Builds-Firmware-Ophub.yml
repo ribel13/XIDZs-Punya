@@ -572,7 +572,8 @@ jobs:
 
           # Setup working directory
           mv *-imagebuilder-* ${WORKING_DIR}
-          cp -r $GITHUB_WORKSPACE/origin/* $GITHUB_WORKSPACE/${WORKING_DIR}
+          #cp -r $GITHUB_WORKSPACE/origin/* $GITHUB_WORKSPACE/${WORKING_DIR}
+          cp -r $GITHUB_WORKSPACE/* $GITHUB_WORKSPACE/${WORKING_DIR}
 
           echo "status=success" >> $GITHUB_OUTPUT
 
