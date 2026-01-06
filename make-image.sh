@@ -27,8 +27,8 @@ PACKAGES+=" kmod-usb-storage kmod-scsi-core dosfstools fdisk parted losetup resi
 PACKAGES+=" kmod-usb-uhci kmod-usb-ohci kmod-usb2 kmod-usb-ehci kmod-usb3 kmod-usb-xhci-hcd usbutils \
 kmod-macvlan kmod-mii kmod-usb-net kmod-usb-net-rtl8150 kmod-usb-net-rtl8152 kmod-usb-net-asix kmod-usb-net-asix-ax88179 \
 kmod-usb-serial kmod-usb-serial-option kmod-nls-utf8 kmod-usb-serial-wwan \
-kmod-usb-serial-qualcomm kmod-usb-serial-sierrawireless kmod-usb-acm kmod-usb-wdm \
-kmod-usb-net-rndis kmod-usb-net-cdc-ether kmod-usb-net-cdc-ncm kmod-usb-net-sierrawireless \
+kmod-usb-serial-qualcomm kmod-usb-acm kmod-usb-wdm \
+kmod-usb-net-rndis kmod-usb-net-cdc-ether kmod-usb-net-cdc-ncm \
 kmod-usb-net-qmi-wwan kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-mbim \
 uqmi libqmi qmi-utils umbim libmbim mbim-utils luci-proto-qmi luci-proto-ncm \
 modemmanager luci-proto-modemmanager usb-modeswitch xmm-modem luci-proto-xmm"
@@ -90,20 +90,19 @@ add_tunnel_packages() {
 #PACKAGES+=" luci-app-diskman luci-app-mmconfig internet-detector internet-detector-mod-modem-restart luci-app-internet-detector"
 #PACKAGES+=" luci-app-3ginfo-lite luci-app-netmonitor luci-app-eqosplus ookla-speedtest"
 PACKAGES+=" luci-app-diskman luci-app-mmconfig internet-detector internet-detector-mod-modem-restart luci-app-internet-detector"
-PACKAGES+=" luci-app-3ginfo-lite luci-app-netmonitor"
 
 # THEMES & REMOTE ACCESS
 #PACKAGES+=" luci-theme-argon luci-theme-rtawrt luci-theme-alpha"
-PACKAGES+=" tailscale luci-app-tailscale"
-PACKAGES+=" luci-theme-argon luci-theme-material"
+PACKAGES+=" tailscale luci-app-tailscale luci-theme-material"
+#PACKAGES+=" luci-theme-argon luci-theme-material"
 
 # PHP8
 PACKAGES+=" php8 php8-cli php8-fastcgi php8-fpm php8-mod-session php8-mod-ctype php8-mod-fileinfo php8-mod-zip php8-mod-iconv php8-mod-mbstring"
 
 # MISC PACKAGES
 MISC+=" zoneinfo-core zoneinfo-asia jq htop httping adb openssh-sftp-server zram-swap screen \
-atc-fib-l8x0_gl atc-fib-fm350_gl luci-proto-atc luci-app-droidnet luci-app-ipinfo \
-luci-app-lite-watchdog luci-app-poweroffdevice luci-app-ramfree luci-app-tinyfm luci-app-ttyd luci-app-mactodong"
+atc-fib-l8x0_gl atc-fib-fm350_gl luci-proto-atc tcpdump fping \
+luci-app-ramfree luci-app-tinyfm luci-app-ttyd"
 
 # PROFILE SPECIFIC
 configure_profile_packages() {
@@ -124,10 +123,10 @@ configure_profile_packages() {
 # RELEASE SPECIFIC
 configure_release_packages() {
     if [[ "${BASE:-}" == "openwrt" ]]; then
-        MISC+=" wpad-openssl iw iwinfo wireless-regdb kmod-cfg80211 kmod-mac80211 luci-app-temp-status"
+        #MISC+=" wpad-openssl iw iwinfo wireless-regdb kmod-cfg80211 kmod-mac80211 luci-app-temp-status"
         EXCLUDED+=" -dnsmasq"
     elif [[ "${BASE:-}" == "immortalwrt" ]]; then
-        MISC+=" wpad-openssl iw iwinfo wireless-regdb kmod-cfg80211 kmod-mac80211"
+        #MISC+=" wpad-openssl iw iwinfo wireless-regdb kmod-cfg80211 kmod-mac80211"
         EXCLUDED+=" -dnsmasq -cpusage -automount -libustream-openssl -default-settings-chn -luci-i18n-base-zh-cn"
         
         if [[ "${ARCH_2:-}" == "x86_64" ]] || [[ "${ARCH_2:-}" == "i386" ]]; then
