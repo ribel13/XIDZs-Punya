@@ -61,7 +61,7 @@ repackwrt() {
     #local readonly work_dir="$GITHUB_WORKSPACE/$WORKING_DIR"
     local readonly OPHUB_REPO="https://github.com/ribel13/amlogic-s9xxx-openwrt/archive/refs/heads/main.zip"
     local readonly ULO_REPO="https://github.com/ribel13/ULO-Builder/archive/refs/heads/main.zip"
-    local readonly work_dir="$GITHUB_WORKSPACE/$WORKING_DIR"
+    local readonly work_dir="$WORKING_DIR"
     
     # Setup directories based on builder type
     local builder_dir output_dir repo_url
