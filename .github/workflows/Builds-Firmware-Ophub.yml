@@ -359,7 +359,7 @@ jobs:
               ;;
             "Amlogic s905x B860H")
               TARGET_BUILD="s905x-b860h"
-              KERNEL="5.15.y_6.1.y_6.6.y-flippy-94+"
+              KERNEL="5.15.y_6.1.y_6.6.y"
               echo "TARGET_BUILD=$TARGET_BUILD" >> $GITHUB_ENV
               echo "KERNEL=$KERNEL" >> $GITHUB_ENV
               ;;
