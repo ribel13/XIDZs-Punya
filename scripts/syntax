@@ -138,3 +138,5 @@ ip -o addr show | awk '/inet / && !seen[$2]++ {
 done
 
 printf "${M}$(printf '%0.s─' $(seq 1 50))${N}\n"
+printf "%17s${V}xidz_x | xdev${N}\n"
+printf "${M}$(printf '%0.s─' $(seq 1 50))${N}\n"
