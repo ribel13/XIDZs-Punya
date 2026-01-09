@@ -1,16 +1,5 @@
 <h3 align="center">OpenWrt | ImmortalWrt</h3>
-<h4 align="center">23.05.7 | 24.10.5</h4>
 <p align="center"><em>ImageBuilder | UloBuilder</em></p>
-
----
-
-### Devices Support
-- **OrangePi** - Support untuk berbagai varian Orange Pi
-- **RaspberryPi** - Kompatibel dengan Raspberry Pi series
-- **NanoPi** - Support untuk FriendlyARM NanoPi series
-- **Amlogic** - Support untuk devices chipset Amlogic
-- **Rockchip** - Support untuk devices chipset Rockchip
-- **x86/x64** - Support untuk platform PC
 
 ---
 ### Script Builder
