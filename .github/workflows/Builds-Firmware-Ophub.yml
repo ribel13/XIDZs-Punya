@@ -362,7 +362,8 @@ jobs:
               TARGET_BUILD="s905x-b860h"
               KERNEL="5.15.y_6.1.y_6.6.y"
               echo "TARGET_BUILD=$TARGET_BUILD" >> $GITHUB_ENV
-              echo "KERNEL=$KERNEL" >> $GITHUB_ENV
+              # echo "KERNEL=$KERNEL" >> $GITHUB_ENV
+              echo "KERNEL=$KERNEL" >> ophub/amlogic-s9xxx-armbian@main
               ;;
             "Amlogic s905x B860H MODSDCARD")
               TARGET_BUILD="s905x-b860h"
