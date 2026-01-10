@@ -71,7 +71,8 @@ on:
 
 env:
   TZ: Asia/Jakarta
-  WORKING_DIR: imagebuilder
+  #WORKING_DIR: imagebuilder
+  WORKING_DIR: /builder/ccache
   DEBIAN_FRONTEND: noninteractive
   RELEASE_BRANCH: ${{ github.event.inputs.release_branch }}
   TARGET: ${{ github.event.inputs.target }}
