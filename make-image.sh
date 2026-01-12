@@ -101,8 +101,10 @@ PACKAGES+=" luci-theme-argon luci-theme-material"
 PACKAGES+=" php8 php8-cli php8-fastcgi php8-fpm php8-mod-session php8-mod-ctype php8-mod-fileinfo php8-mod-zip php8-mod-iconv php8-mod-mbstring"
 
 # MISC PACKAGES
+#MISC+=" zoneinfo-core zoneinfo-asia jq htop httping adb openssh-sftp-server zram-swap screen \
+#atc-fib-l8x0_gl atc-fib-fm350_gl luci-proto-atc luci-app-ramfree luci-app-tinyfm luci-app-ttyd"
 MISC+=" zoneinfo-core zoneinfo-asia jq htop httping adb openssh-sftp-server zram-swap screen \
-atc-fib-l8x0_gl atc-fib-fm350_gl luci-proto-atc luci-app-ramfree luci-app-tinyfm luci-app-ttyd"
+atc-fib-l8x0_gl atc-fib-fm350_gl luci-proto-atc luci-app-tinyfm luci-app-ttyd"
 
 # PROFILE SPECIFIC
 configure_profile_packages() {
