@@ -37,7 +37,7 @@ on:
       tunnel:
         description: "Select Tunnel VPN"
         required: true
-        default: "openclash"
+        default: "no-tunnel"
         type: choice
         options:
           - openclash
@@ -157,7 +157,7 @@ jobs:
         if: steps.setupenv.outputs.status == 'success'
         uses: softprops/action-gh-release@v2
         env:
-          GITHUB_TOKEN: ${{ secrets.XIDZs_KEY }}
+          GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
         with:
           tag_name: ${{ steps.setupenv.outputs.release_tag }}
           name: ${{ steps.setupenv.outputs.release_name }}
