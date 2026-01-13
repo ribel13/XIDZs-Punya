@@ -42,8 +42,8 @@ REPAIR_RO="/sbin/repair_ro"
 XDEV="/usr/bin/xdev"
 XIDZ="/usr/bin/xidz"
 SYNTAX="/usr/bin/syntax"
-#X_GPIO="/usr/bin/x-gpio"
-#X_GPIO_LED="/usr/bin/x-gpioled"
+X_GPIO="/usr/bin/x-gpio"
+X_GPIO_LED="/usr/bin/x-gpioled"
 
 # Detect system type
 echo "Checking system release..."
