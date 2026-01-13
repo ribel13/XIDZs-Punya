@@ -33,7 +33,7 @@ ARGON_CONF="/usr/share/ucode/luci/template/themes/argon/header.ut"
 RTA_CONF="/usr/lib/lua/luci/view/themes/rtawrt/header.htm"
 INSTALL2_SH="/root/install2.sh"
 TTY_SH="/root/tty.sh"
-#QUENXX_SH="/root/quenxx.sh"
+QUENXX_SH="/root/quenxx.sh"
 QUENXX_SH="/root/frdm.sh"
 FREE_SH="/sbin/free.sh"
 JAM="/sbin/jam"
@@ -71,7 +71,7 @@ echo "src/gz custom_packages https://dl.openwrt.ai/latest/packages/$ARCH/kiddin9
 
 # Basic system
 echo "Setting root password..."
-(echo "access"; sleep 1; echo "access") | passwd > /dev/null
+(echo "root"; sleep 1; echo "root") | passwd > /dev/null
 
 echo "Configuring hostname and timezone..."
 uci batch <<EOF
