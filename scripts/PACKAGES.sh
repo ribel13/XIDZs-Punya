@@ -2,16 +2,23 @@
 
 . ./scripts/INCLUDE.sh
 
-# Define repositories with proper quoting
+# Repository definitions
+if [[ "${VEROP}" == "25.12" ]]; then
+    KIDDIN9_REPO="https://dl.openwrt.ai/releases/25.12/packages/${ARCH_3}/kiddin9"
+else
+    KIDDIN9_REPO="https://dl.openwrt.ai/releases/24.10/packages/${ARCH_3}/kiddin9"
+fi
+
 declare -A REPOS
 REPOS+=(
     ["OPENWRT"]="https://downloads.openwrt.org/releases/packages-${VEROP}/${ARCH_3}"
     ["IMMORTALWRT"]="https://downloads.immortalwrt.org/releases/packages-${VEROP}/${ARCH_3}"
-    ["KIDDIN9"]="https://dl.openwrt.ai/releases/24.10/packages/${ARCH_3}/kiddin9"
+    ["KYARUCLOUD_IMMORTALWRT"]="https://immortalwrt.kyarucloud.moe/releases/packages-${VEROP}/${ARCH_3}"
+    ["KIDDIN9"]="${KIDDIN9_REPO}"
     ["GSPOTX2F"]="https://github.com/gSpotx2f/packages-openwrt/raw/refs/heads/master/current"
     ["FANTASTIC"]="https://fantastic-packages.github.io/packages/releases/${VEROP}/packages/x86_64"
     ["DLLKIDS"]="https://op.dllkids.xyz/packages/${ARCH_3}"
-    ["OPENWRTRU"]="https://openwrt.132lan.ru/packages/24.10/packages/${ARCH_3}/modemfeed"
+    ["OPENWRTRU"]="https://openwrt.132lan.ru/packages/${VEROP}/packages/${ARCH_3}/modemfeed"
 )
 
 # Define package categories with improved structure
@@ -41,17 +48,17 @@ packages_custom+=(
     "luci-app-atcommands_|${REPOS[KIDDIN9]}"
     #"tailscale_|${REPOS[KIDDIN9]}"
     "tailscale_|${REPOS[OPENWRT]}/packages"
-    #"tailscale_|${REPOS[IMMORTALWRT]}/packages"
+    #"tailscale_|${REPOS[KYARUCLOUD_IMMORTALWRT]}/packages"
     #"luci-app-tailscale-community_|${REPOS[KIDDIN9]}"
     
-    #"luci-app-oled_|${REPOS[DLLKIDS]}"
-    #"modemband_|${REPOS[DLLKIDS]}/packages"
-    #"luci-app-ramfree_|${REPOS[DLLKIDS]}/luci"
-    #"luci-app-modemband_|${REPOS[DLLKIDS]}/luci"
-    #"luci-app-sms-tool-js_|${REPOS[DLLKIDS]}/luci"
-    "dns2tcp_|${REPOS[IMMORTALWRT]}/packages"
-    #"luci-theme-argon_|${REPOS[IMMORTALWRT]}/luci"
-    #"luci-app-irqbalance_|${REPOS[IMMORTALWRT]}/luci"
+    "luci-app-oled_|${REPOS[KIDDIN9]}"
+    "modemband_|${REPOS[KYARUCLOUD_IMMORTALWRT]}/packages"
+    "luci-app-ramfree_|${REPOS[KYARUCLOUD_IMMORTALWRT]}/luci"
+    "luci-app-modemband_|${REPOS[KYARUCLOUD_IMMORTALWRT]}/luci"
+    "luci-app-sms-tool-js_|${REPOS[KYARUCLOUD_IMMORTALWRT]}/luci"
+    "dns2tcp_|${REPOS[KYARUCLOUD_IMMORTALWRT]}/packages"
+    #"luci-theme-argon_|${REPOS[KYARUCLOUD_IMMORTALWRT]}/luci"
+    #"luci-app-irqbalance_|${REPOS[KYARUCLOUD_IMMORTALWRT]}/luci"
     
     "ookla-speedtest_|${REPOS[KIDDIN9]}"
     "luci-app-eqosplus_|${REPOS[KIDDIN9]}"
@@ -68,7 +75,7 @@ packages_custom+=(
     "luci-app-ipinfo_|https://api.github.com/repos/bobbyunknown/luci-app-ipinfo/releases/latest"
     "luci-app-netmonitor_|https://api.github.com/repos/de-quenx/luci-app-netmonitor/releases/latest"
     "luci-theme-argon_|https://api.github.com/repos/de-quenx/luci-theme-argon/releases/latest"
-    "luci-theme-rtawrt_|https://api.github.com/repos/de-quenx/luci-theme-rtawrt/releases/latest"
+    #"luci-theme-rtawrt_|https://api.github.com/repos/de-quenx/luci-theme-rtawrt/releases/latest"
 )
 
 if [[ "${TYPE}" == "OPHUB" || "${TYPE}" == "ULO" ]]; then
