@@ -45,6 +45,9 @@ handle_amlogic_files() {
 setup_branch_config() {
     local branch_major=$(echo "${BRANCH}" | cut -d'.' -f1)
     case "$branch_major" in
+        "25")
+            log "INFO" "Configuring for branch 25.x"
+            ;;
         "24")
             log "INFO" "Configuring for branch 24.x"
             ;;
