@@ -1,14 +1,8 @@
-<h3 align="center">OpenWrt | ImmortalWrt</h3>
-<p align="center"><em>ImageBuilder | UloBuilder</em></p>
-
----
-### Script Builder
-- Script Builder Dari RTA-WRT Builder dengan sedikit perubahan
 
 ---
 
 <p align="center">
-<strong>© XIDZsWRT | INDONESIA</strong>
+<strong>© XIDZsWRT</strong>
 </p>
 
 ---
