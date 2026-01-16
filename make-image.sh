@@ -45,7 +45,7 @@ OPENCLASH="coreutils-nohup ipset ip-full libcap libcap-bin ruby ruby-yaml kmod-t
 NIKKI="nikki luci-app-nikki"
 INSOMCLASH="insomclash luci-app-insomclash"
 NEKO="php8 php8-cgi kmod-tun bash curl jq ip-full ca-bundle"
-#PASSWALL="microsocks dns2socks dns2tcp ipt2socks tcping chinadns-ng xray-core xray-plugin naiveproxy trojan-plus tuic-client luci-app-passwall"
+PASSWALL="microsocks dns2socks dns2tcp ipt2socks tcping chinadns-ng xray-core xray-plugin naiveproxy trojan-plus tuic-client luci-app-passwall"
 
 add_tunnel_packages() {
     local option="$1"
@@ -62,7 +62,7 @@ add_tunnel_packages() {
         insomclash)
             PACKAGES+=" $INSOMCLASH"
             ;;
-        #passwall)
+        passwall)
             #PACKAGES+=" $PASSWALL"
             #;;
         nikki-passwall)
@@ -90,7 +90,7 @@ add_tunnel_packages() {
 #PACKAGES+=" luci-app-diskman luci-app-mmconfig internet-detector internet-detector-mod-modem-restart luci-app-internet-detector"
 #PACKAGES+=" luci-app-3ginfo-lite luci-app-netmonitor luci-app-eqosplus ookla-speedtest"
 PACKAGES+=" luci-app-diskman internet-detector internet-detector-mod-modem-restart luci-app-internet-detector"
-PACKAGES+=" luci-app-3ginfo-lite luci-app-netmonitor"
+PACKAGES+=" luci-app-3ginfo-lite luci-app-netmonitor luci-app-mmconfig"
 
 # THEMES & REMOTE ACCESS
 #PACKAGES+=" luci-theme-argon luci-theme-rtawrt luci-theme-alpha"
@@ -101,10 +101,9 @@ PACKAGES+=" luci-theme-argon luci-theme-material"
 PACKAGES+=" php8 php8-cli php8-fastcgi php8-fpm php8-mod-session php8-mod-ctype php8-mod-fileinfo php8-mod-zip php8-mod-iconv php8-mod-mbstring"
 
 # MISC PACKAGES
-#MISC+=" zoneinfo-core zoneinfo-asia jq htop httping adb openssh-sftp-server zram-swap screen \
-#atc-fib-l8x0_gl atc-fib-fm350_gl luci-proto-atc luci-app-ramfree luci-app-tinyfm luci-app-ttyd"
 MISC+=" zoneinfo-core zoneinfo-asia jq htop httping adb openssh-sftp-server zram-swap screen \
-atc-fib-l8x0_gl atc-fib-fm350_gl luci-proto-atc luci-app-tinyfm luci-app-ttyd luci-app-ramfree"
+atc-fib-l8x0_gl atc-fib-fm350_gl luci-proto-atc luci-app-droidnet luci-app-ipinfo \
+luci-app-lite-watchdog luci-app-poweroffdevice luci-app-ramfree luci-app-tinyfm luci-app-ttyd luci-app-mactodong"
 
 # PROFILE SPECIFIC
 configure_profile_packages() {
@@ -125,9 +124,12 @@ configure_profile_packages() {
 # RELEASE SPECIFIC
 configure_release_packages() {
     if [[ "${BASE:-}" == "openwrt" ]]; then
-        MISC+=" wpad-openssl luci-app-temp-status"
+        MISC+=" wpad-openssl"
+        #MISC+=" wpad-openssl iw iwinfo wireless-regdb kmod-cfg80211 kmod-mac80211 luci-app-temp-status"
         EXCLUDED+=" -dnsmasq"
     elif [[ "${BASE:-}" == "immortalwrt" ]]; then
+        #MISC+=" wpad-openssl iw iwinfo wireless-regdb kmod-cfg80211 kmod-mac80211"
+        #EXCLUDED+=" -dnsmasq -cpusage -automount -libustream-openssl -default-settings-chn -luci-i18n-base-zh-cn"
         MISC+=" wpad-openssl"
         EXCLUDED+=" -dnsmasq -cpusage -automount -libustream-openssl -default-settings-chn -luci-i18n-base-zh-cn"
         
