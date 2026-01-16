@@ -79,7 +79,7 @@ download_custom_scripts() {
     log "INFO" "Downloading custom scripts"
     
     local scripts=(
-        "https://raw.githubusercontent.com/frizkyiman/fix-read-only/main/install2.sh|files/root"
+        #"https://raw.githubusercontent.com/frizkyiman/fix-read-only/main/install2.sh|files/root"
         #"https://raw.githubusercontent.com/syntax-xidz/contenx/main/shell/quenxx.sh|files/root"
         #"https://raw.githubusercontent.com/syntax-xidz/contenx/main/shell/tty.sh|files/root"
         #"https://raw.githubusercontent.com/syntax-xidz/contenx/main/shell/xdev|files/usr/bin"
