@@ -16,9 +16,9 @@ CRONTAB_ROOT="/etc/crontabs/root"
 USB_MODE="/etc/usb-mode.json"
 OPKG_CONF="/etc/opkg.conf"
 PROFILE="/etc/profile"
-CLASH_META="/etc/openclash/core/clash_meta"
-O_COUNTRY_MMDB="/etc/openclash/Country.mmdb"
-N_COUNTRY_MMDB="/etc/nikki/run/Country.mmdb"
+#CLASH_META="/etc/openclash/core/clash_meta"
+#O_COUNTRY_MMDB="/etc/openclash/Country.mmdb"
+#N_COUNTRY_MMDB="/etc/nikki/run/Country.mmdb"
 #OC_GEOIP="/etc/openclash/GeoIP.dat"
 #OC_GEOSITE="/etc/openclash/GeoSite.dat"
 #NIKKI_GEOIP="/etc/nikki/run/GeoIP.dat"
@@ -75,12 +75,14 @@ echo "Setting root password..."
 
 echo "Configuring hostname and timezone..."
 uci batch <<EOF
-set system.@system[0].hostname='XIDZs-WRT'
+set system.@system[0].hostname='FREEDOM'
 set system.@system[0].timezone='WIB-7'
 set system.@system[0].zonename='Asia/Jakarta'
 delete system.ntp.server
-add_list system.ntp.server='pool.ntp.org'
-add_list system.ntp.server='id.pool.ntp.org'
+add_list system.ntp.server='0.id.pool.ntp.org'
+add_list system.ntp.server='1.id.pool.ntp.org'
+add_list system.ntp.server='2.id.pool.ntp.org'
+add_list system.ntp.server='3.id.pool.ntp.org'
 add_list system.ntp.server='time.google.com'
 commit system
 EOF
@@ -139,8 +141,7 @@ if grep -q "Raspberry Pi 5\|Raspberry Pi 4\|Raspberry Pi 3" /proc/cpuinfo &>/dev
     uci set wireless.@wifi-device[0].htmode='VHT80'
 else
     echo "Generic device - configuring 2.4GHz WiFi"
-    uci set wireless.@wifi-iface[0].ssid='Freedom' &>/dev/null
-    #uci set wireless.@wifi-iface[0].ssid='XIDZs' &>/dev/null
+    uci set wireless.@wifi-iface[0].ssid='XIDZs' &>/dev/null
     uci set wireless.@wifi-device[0].channel='1' &>/dev/null
     uci set wireless.@wifi-device[0].htmode='HT20' &>/dev/null
 fi
@@ -247,9 +248,9 @@ for pkg in luci-app-openclash luci-app-nikki luci-app-passwall; do
                 rm -f /etc/config/openclash    
                 mv /etc/config/openclash1 /etc/config/openclash
                 
-                sed -i '103,105s/.*/<\!-- & -->/' "$RTA_CONF"
+                #sed -i '103,105s/.*/<\!-- & -->/' "$RTA_CONF"
                 sed -i '144s/.*/<\!-- & -->/' "$ARGON_CONF"
-                sed -i "88s/'Enable'/'Disable'/" "$ALPHA_CONF"
+                #sed -i "88s/'Enable'/'Disable'/" "$ALPHA_CONF"
                 ;;
                 
             luci-app-nikki)
@@ -257,16 +258,16 @@ for pkg in luci-app-openclash luci-app-nikki luci-app-passwall; do
                 NIKKI_FILES="$NIKKI_GEOIP $NIKKI_GEOSITE $N_COUNTRY_MMDB"
                 chmod +x $NIKKI_FILES
                 
-                sed -i '115,117s/.*/<\!-- & -->/' "$RTA_CONF"
+                #sed -i '115,117s/.*/<\!-- & -->/' "$RTA_CONF"
                 sed -i '146s/.*/<\!-- & -->/' "$ARGON_CONF"
-                sed -i "40s/'Enable'/'Disable'/" "$ALPHA_CONF"
+                #sed -i "40s/'Enable'/'Disable'/" "$ALPHA_CONF"
                 ;;
                 
             luci-app-passwall)
                 echo "Configuring Passwall"
-                sed -i '112,114s/.*/<\!-- & -->/' "$RTA_CONF"
+                #sed -i '112,114s/.*/<\!-- & -->/' "$RTA_CONF"
                 sed -i '147s/.*/<\!-- & -->/' "$ARGON_CONF"
-                sed -i "72s/'Enable'/'Disable'/" "$ALPHA_CONF"
+                #sed -i "72s/'Enable'/'Disable'/" "$ALPHA_CONF"
                 ;;
         esac
         
