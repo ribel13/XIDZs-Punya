@@ -27,8 +27,8 @@ PACKAGES+=" kmod-usb-storage kmod-scsi-core dosfstools fdisk parted losetup resi
 PACKAGES+=" kmod-usb-uhci kmod-usb-ohci kmod-usb2 kmod-usb-ehci kmod-usb3 kmod-usb-xhci-hcd usbutils \
 kmod-macvlan kmod-mii kmod-usb-net kmod-usb-net-rtl8150 kmod-usb-net-rtl8152 kmod-usb-net-asix kmod-usb-net-asix-ax88179 \
 kmod-usb-serial kmod-usb-serial-option kmod-nls-utf8 kmod-usb-serial-wwan \
-kmod-usb-serial-qualcomm kmod-usb-acm kmod-usb-wdm \
-kmod-usb-net-rndis kmod-usb-net-cdc-ether kmod-usb-net-cdc-ncm \
+kmod-usb-serial-qualcomm kmod-usb-serial-sierrawireless kmod-usb-acm kmod-usb-wdm \
+kmod-usb-net-rndis kmod-usb-net-cdc-ether kmod-usb-net-cdc-ncm kmod-usb-net-sierrawireless \
 kmod-usb-net-qmi-wwan kmod-usb-net-huawei-cdc-ncm kmod-usb-net-cdc-mbim \
 uqmi libqmi qmi-utils umbim libmbim mbim-utils luci-proto-qmi luci-proto-ncm \
 modemmanager luci-proto-modemmanager usb-modeswitch xmm-modem luci-proto-xmm"
@@ -36,7 +36,7 @@ modemmanager luci-proto-modemmanager usb-modeswitch xmm-modem luci-proto-xmm"
 # MODEM TOOLS
 PACKAGES+=" atinout modeminfo modemband sms-tool luci-app-modeminfo luci-app-modemband luci-app-sms-tool-js picocom minicom"
 PACKAGES+=" modeminfo-serial-dell modeminfo-serial-fibocom modeminfo-serial-sierra modeminfo-serial-tw modeminfo-serial-xmm"
-#PACKAGES+=" atinout modeminfo sms-tool luci-app-modeminfo picocom minicom"
+#PACKAGES+=" atinout sms-tool picocom minicom"
 #PACKAGES+=" modeminfo-serial-dell modeminfo-serial-fibocom modeminfo-serial-sierra modeminfo-serial-tw modeminfo-serial-xmm"
 
 
@@ -65,21 +65,21 @@ add_tunnel_packages() {
         #passwall)
             #PACKAGES+=" $PASSWALL"
             #;;
-        #nikki-passwall)
-            #PACKAGES+=" $NIKKI $PASSWALL"
-            #;;
-        #nikki-insomclash)
-            #PACKAGES+=" $NIKKI $INSOMCLASH"
-            #;;
-        #openclash-nikki)
-            #PACKAGES+=" $OPENCLASH $NIKKI"
-            #;;
-        #openclash-insomclash)
-            #PACKAGES+=" $OPENCLASH $INSOMCLASH"
-            #;;
-        #openclash-nikki-passwall)
-            #PACKAGES+=" $OPENCLASH $NIKKI $PASSWALL"
-            #;;
+        nikki-passwall)
+            PACKAGES+=" $NIKKI $PASSWALL"
+            ;;
+        nikki-insomclash)
+            PACKAGES+=" $NIKKI $INSOMCLASH"
+            ;;
+        openclash-nikki)
+            PACKAGES+=" $OPENCLASH $NIKKI"
+            ;;
+        openclash-insomclash)
+            PACKAGES+=" $OPENCLASH $INSOMCLASH"
+            ;;
+        openclash-nikki-passwall)
+            PACKAGES+=" $OPENCLASH $NIKKI $PASSWALL"
+            ;;
         *)
             # No tunnel
             ;;
@@ -89,8 +89,8 @@ add_tunnel_packages() {
 # UTILITIES
 #PACKAGES+=" luci-app-diskman luci-app-mmconfig internet-detector internet-detector-mod-modem-restart luci-app-internet-detector"
 #PACKAGES+=" luci-app-3ginfo-lite luci-app-netmonitor luci-app-eqosplus ookla-speedtest"
-PACKAGES+=" luci-app-diskman internet-detector internet-detector-mod-modem-restart luci-app-internet-detector"
-PACKAGES+=" luci-app-3ginfo-lite luci-app-netmonitor luci-app-mmconfig"
+PACKAGES+=" luci-app-diskman luci-app-mmconfig internet-detector internet-detector-mod-modem-restart luci-app-internet-detector"
+PACKAGES+=" luci-app-3ginfo-lite luci-app-netmonitor"
 
 # THEMES & REMOTE ACCESS
 #PACKAGES+=" luci-theme-argon luci-theme-rtawrt luci-theme-alpha"
@@ -124,12 +124,11 @@ configure_profile_packages() {
 # RELEASE SPECIFIC
 configure_release_packages() {
     if [[ "${BASE:-}" == "openwrt" ]]; then
-        MISC+=" wpad-openssl"
         #MISC+=" wpad-openssl iw iwinfo wireless-regdb kmod-cfg80211 kmod-mac80211 luci-app-temp-status"
+        MISC+=" wpad-openssl"
         EXCLUDED+=" -dnsmasq"
     elif [[ "${BASE:-}" == "immortalwrt" ]]; then
         #MISC+=" wpad-openssl iw iwinfo wireless-regdb kmod-cfg80211 kmod-mac80211"
-        #EXCLUDED+=" -dnsmasq -cpusage -automount -libustream-openssl -default-settings-chn -luci-i18n-base-zh-cn"
         MISC+=" wpad-openssl"
         EXCLUDED+=" -dnsmasq -cpusage -automount -libustream-openssl -default-settings-chn -luci-i18n-base-zh-cn"
         
