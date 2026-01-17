@@ -45,7 +45,7 @@ OPENCLASH="coreutils-nohup ipset ip-full libcap libcap-bin ruby ruby-yaml kmod-t
 NIKKI="nikki luci-app-nikki"
 INSOMCLASH="insomclash luci-app-insomclash"
 NEKO="php8 php8-cgi kmod-tun bash curl jq ip-full ca-bundle"
-PASSWALL="microsocks dns2socks dns2tcp ipt2socks tcping chinadns-ng xray-core xray-plugin naiveproxy trojan-plus tuic-client luci-app-passwall"
+#PASSWALL="microsocks dns2socks dns2tcp ipt2socks tcping chinadns-ng xray-core xray-plugin naiveproxy trojan-plus tuic-client luci-app-passwall"
 
 add_tunnel_packages() {
     local option="$1"
@@ -62,24 +62,24 @@ add_tunnel_packages() {
         insomclash)
             PACKAGES+=" $INSOMCLASH"
             ;;
-        passwall)
+        #passwall)
             #PACKAGES+=" $PASSWALL"
             #;;
-        nikki-passwall)
-            PACKAGES+=" $NIKKI $PASSWALL"
-            ;;
-        nikki-insomclash)
-            PACKAGES+=" $NIKKI $INSOMCLASH"
-            ;;
-        openclash-nikki)
-            PACKAGES+=" $OPENCLASH $NIKKI"
-            ;;
-        openclash-insomclash)
-            PACKAGES+=" $OPENCLASH $INSOMCLASH"
-            ;;
-        openclash-nikki-passwall)
-            PACKAGES+=" $OPENCLASH $NIKKI $PASSWALL"
-            ;;
+        #nikki-passwall)
+            #PACKAGES+=" $NIKKI $PASSWALL"
+            #;;
+        #nikki-insomclash)
+            #PACKAGES+=" $NIKKI $INSOMCLASH"
+            #;;
+        #openclash-nikki)
+            #PACKAGES+=" $OPENCLASH $NIKKI"
+            #;;
+        #openclash-insomclash)
+            #PACKAGES+=" $OPENCLASH $INSOMCLASH"
+            #;;
+        #openclash-nikki-passwall)
+            #PACKAGES+=" $OPENCLASH $NIKKI $PASSWALL"
+            #;;
         *)
             # No tunnel
             ;;
